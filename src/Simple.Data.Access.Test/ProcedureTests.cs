@@ -20,10 +20,19 @@ namespace Simple.Data.Access.Test
 		}
 
 		[Test]
-		public void TestRetrieveCountProcedure()
+		public void TestRetrieveCountProcedureWithNoParams()
 		{
 			var db = Database.OpenConnection(_helper.ConnectionString);
 			var rec = db.sp_COUNTUSERS.All().First();
+			Assert.AreEqual(6, rec.NumUsers);
+		}
+
+		[Test]
+		[Ignore("Access does not seem to like SELECT statement stored procedures with inputs parameters or I'm testing it incorrectly")]
+		public void TestRetrieveCountProcedureWithParams()
+		{
+			var db = Database.OpenConnection(_helper.ConnectionString);
+			var rec = db.sp_COUNTUSERSWITHAGE(23).First();
 			Assert.AreEqual(6, rec.NumUsers);
 		}
 
