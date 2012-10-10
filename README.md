@@ -35,7 +35,7 @@ Normal Way to Call it with Simple.Data:
 db.ProcedureWithoutParameters();
 
 Way to Call it with Simple.Data.Access:
-db.ProcedureWithoutParameters.All()
+db.ProcedureWithoutParameters.*All()*;
 
 I'm fairly certain additional or more robust support for Access Stored Procedures could be developed I just have not had the time or need for my personal projects.
 
@@ -50,7 +50,7 @@ Simple.Data.Access requires:
 These libraries are available on:
 - Nuget
 - [Github-Simple.Data](https://github.com/markrendle/Simple.Data)
-- Included with Simple.Data.Access as a submodule to the source under dependencies folder.
+- Included with Simple.Data.Access as a submodule under dependencies folder.
 
 **NOTE: The current version of Simple.Data (0.18.1 has an issue with the Simple.Data.Access != operator).  It has already been fixed in the source on Github and should be ok on later releases of Simple.Data/Simple.Data.Ado.
 
@@ -62,31 +62,33 @@ Open Connection to Database using standard OleDb connection string for Access or
 
 1) Use default database defined in app.config 
 app.config:
-<add name="Simple.Data.Properties.Settings.DefaultConnectionString"
+<br>
+`<add name="Simple.Data.Properties.Settings.DefaultConnectionString"
             connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb"
-            providerName="System.Data.OleDb" />
+            providerName="System.Data.OleDb" />`
 
-Code:
+Code:<br>
     var db = Database.Open();
 
 2) Use named connection defined in app.config
 app.config:
-        <add name="Access2003"
-            connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb" />
+<br>
+`<add name="Access2003"
+            connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb" />`
 
-Code:
+Code:<br>
     var db = Database.OpenNamedConnection("Access2003");
             Assert.IsNotNull(db);
 
-3) Use standard OleDb connection string
-Access 2000-2003: Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb
-Access 2007+: Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Data\Access2007TestDatabase.accdb
+3) Use standard OleDb connection string<br>
+Access 2000-2003: Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb<br>
+Access 2007+: Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Data\Access2007TestDatabase.accdb<br>
 
-Code:
+Code:<br>
 	var db = Database.OpenConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb");
 
-4) Open Access File directly
-var db = Database.OpenFile(@"..\..\Data\Access2003TestDatabase.mdb");
+4) Open Access File directly<br>
+var db = Database.OpenFile(@"..\..\Data\Access2003TestDatabase.mdb");<br>
 var db = Database.OpenFile(@"..\..\Data\Access2007TestDatabase.accdb");
 
 ==================
