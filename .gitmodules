@@ -1,0 +1,3 @@
+[submodule "dependencies/Simple.Data"]
+	path = dependencies/Simple.Data
+	url = https://github.com/markrendle/Simple.Data.git

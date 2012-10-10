@@ -1,0 +1,9 @@
+# Visual Studio / Dev files to ignore #
+#######################################
+bin
+obj
+_Resharper*
+*.user
+*.suo
+Thumbs.db
+*.sln.cache
