@@ -68,7 +68,7 @@ Open Connection to Database using standard OleDb connection string for Access or
 ` providerName="System.Data.OleDb" />`
 
 Code:<br>
-    var db = Database.Open();
+`var db = Database.Open();`
 
 2) Use named connection defined in app.config:
 <br>
@@ -76,19 +76,18 @@ Code:<br>
 `Data Source=..\..\Data\Access2003TestDatabase.mdb" />`
 
 Code:<br>
-    var db = Database.OpenNamedConnection("Access2003");
-            Assert.IsNotNull(db);
+`var db = Database.OpenNamedConnection("Access2003");`
 
 3) Use standard OleDb connection string<br>
 Access 2000-2003: Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb<br>
 Access 2007+: Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Data\Access2007TestDatabase.accdb<br>
 
 Code:<br>
-	var db = Database.OpenConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb");
+`var db = Database.OpenConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb");`
 
 4) Open Access File directly<br>
-var db = Database.OpenFile(@"..\..\Data\Access2003TestDatabase.mdb");<br>
-var db = Database.OpenFile(@"..\..\Data\Access2007TestDatabase.accdb");
+`var db = Database.OpenFile(@"..\..\Data\Access2003TestDatabase.mdb");`<br>
+`var db = Database.OpenFile(@"..\..\Data\Access2007TestDatabase.accdb");`
 
 ==================
 ##How To Use
