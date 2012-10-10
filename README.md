@@ -60,17 +60,17 @@ These libraries are available on:
 
 Open Connection to Database using standard OleDb connection string for Access or a filename or named or default connections in application configuration (same as Simple.Data):
 
-1) Use default database defined in app.config 
-app.config:
+1) Use default database defined in app.config:
 <br>
 `<add name="Simple.Data.Properties.Settings.DefaultConnectionString"`<br>
-`connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb" providerName="System.Data.OleDb" />`
+`connectionString="Provider=Microsoft.Jet.OLEDB.4.0;`<br>
+`Data Source=..\..\Data\Access2003TestDatabase.mdb"`<br>
+` providerName="System.Data.OleDb" />`
 
 Code:<br>
     var db = Database.Open();
 
-2) Use named connection defined in app.config
-app.config:
+2) Use named connection defined in app.config:
 <br>
 `<add name="Access2003"connectionString="Provider=Microsoft.Jet.OLEDB.4.0;`<br>
 `Data Source=..\..\Data\Access2003TestDatabase.mdb" />`
