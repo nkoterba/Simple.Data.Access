@@ -27,15 +27,15 @@ For example:
 
 Basic Stored Procedure:
 
-CREATE PROCEDURE ProcedureWithoutParameters 
+`CREATE PROCEDURE ProcedureWithoutParameters 
 AS
-SELECT * FROM Customers
+SELECT * FROM Customers`
 
-Normal Way to Call it with Simple.Data:
-db.ProcedureWithoutParameters();
+Normal Way to Call it with Simple.Data:<br>
+`db.ProcedureWithoutParameters();`
 
-Way to Call it with Simple.Data.Access:
-db.ProcedureWithoutParameters.*All()*;
+Way to Call it with Simple.Data.Access:<br>
+`db.ProcedureWithoutParameters.`**All()**`;`
 
 I'm fairly certain additional or more robust support for Access Stored Procedures could be developed I just have not had the time or need for my personal projects.
 
@@ -52,7 +52,7 @@ These libraries are available on:
 - [Github-Simple.Data](https://github.com/markrendle/Simple.Data)
 - Included with Simple.Data.Access as a submodule under dependencies folder.
 
-**NOTE: The current version of Simple.Data (0.18.1 has an issue with the Simple.Data.Access != operator).  It has already been fixed in the source on Github and should be ok on later releases of Simple.Data/Simple.Data.Ado.
+**WARNING**: The current version of Simple.Data (0.18.1 has an issue with the Simple.Data.Access != operator).  It has already been fixed in the source on Github and should be ok on later releases of Simple.Data/Simple.Data.Ado.
 
 ==================
 ##How To Use
@@ -79,8 +79,8 @@ Code:<br>
 `var db = Database.OpenNamedConnection("Access2003");`
 
 3) Use standard OleDb connection string<br>
-Access 2000-2003: Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb<br>
-Access 2007+: Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Data\Access2007TestDatabase.accdb<br>
+Access 2000-2003:<br> *Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb*<br>
+Access 2007+:<br> *Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Data\Access2007TestDatabase.accdb*<br>
 
 Code:<br>
 `var db = Database.OpenConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\Data\Access2003TestDatabase.mdb");`
